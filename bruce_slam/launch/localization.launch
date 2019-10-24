@@ -1,0 +1,21 @@
+<launch>
+    <!-- offline mode -->
+    <arg name="file" default=""/>
+    <arg name="start" default="0.0"/>
+    <arg name="duration" default="-1"/>
+
+    <!-- offline mode -->
+    <group ns="bruce" unless="$(eval arg('file') == '')">
+        <node pkg="bruce_slam" name="localization" type="localization_node.py" output="screen" args="--file $(arg file) --start=$(arg start) --duration=$(arg duration)">
+            <rosparam command="load" file="$(find bruce_slam)/config/localization.yaml" subst_value="true"/>
+        </node>
+    </group>
+
+    <group ns="bruce" if="$(eval arg('file') == '')">
+        <node pkg="bruce_slam" name="localization" type="localization_node.py" output="screen">
+            <rosparam command="load" file="$(find bruce_slam)/config/localization.yaml" subst_value="true"/>
+        </node>
+    </group>
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find bruce_slam)/config/localization.rviz" />
+</launch>

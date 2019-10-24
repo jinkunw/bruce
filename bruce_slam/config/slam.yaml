@@ -1,0 +1,39 @@
+keyframe_duration: 1.0
+keyframe_translation: 4.0
+keyframe_rotation: deg(30)
+
+# x, y, theta in m, m, rad
+prior_sigmas: [0.1, 0.1, 0.01]
+odom_sigmas: [0.2, 0.2, 0.02]
+
+icp_config: $(find bruce_slam)/config/icp.yaml
+# x, y, theta in m, m, rad
+icp_odom_sigmas: [0.1, 0.1, 0.01]
+
+# Downsample points for ICP/publishing
+point_resolution: 0.5
+
+# Sequential scan matching
+ssm:
+  min_points: 50
+  max_translation: 2.0
+  max_rotation: deg(30)
+  target_frames: 3
+
+# Non-sequential scan matching
+nssm:
+  min_st_sep: 10
+  min_points: 50
+  max_translation: 10.0
+  max_rotation: deg(60)
+  source_frames: 5
+  cov_samples: 30
+
+pcm_queue_size: 5
+min_pcm: 3
+
+# Number of samples to compute the probability of
+# successful non-sequential scan matching p(z)
+pz_samples: 0
+# point re-detection rate
+pz_detection_rate: 0.3

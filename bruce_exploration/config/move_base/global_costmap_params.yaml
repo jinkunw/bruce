@@ -1,0 +1,20 @@
+global_costmap:
+   map_type: costmap
+   global_frame: map
+   robot_base_frame: base_link
+   update_frequency: 1.0
+   publish_frequency: 1.0
+   static_map: true
+   rolling_window: false
+   static_layer: {map_topic: map}
+   transform_tolerance: 2.0
+
+   plugins:
+      - {name: static_layer, type: "costmap_2d::StaticLayer"}
+      - {name: inflater_layer, type: "costmap_2d::InflationLayer"}
+   static_layer:
+      # Unknown values in the map message are translated as FREE_SPACE in the layer.
+      track_unknown_space: false
+      lethal_cost_threshold: 80
+   inflater_layer:
+      inflation_radius: 2.0

@@ -1,0 +1,18 @@
+<launch>
+    <arg name="map_topic"/>
+    <arg name="odom_topic"/>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base">
+        <rosparam file="$(find bruce_exploration)/config/move_base/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find bruce_exploration)/config/move_base/global_costmap_params.yaml" command="load" />
+
+        <rosparam file="$(find bruce_exploration)/config/move_base/teb_local_planner_params.yaml" command="load" />
+        <rosparam file="$(find bruce_exploration)/config/move_base/move_base_params.yaml" command="load" />
+
+        <param name="base_global_planner" type="string" value="bruce_exploration/ExplorationPlanner" />
+        <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+
+        <remap from="map" to="$(arg map_topic)"/>
+        <remap from="odom" to="$(arg odom_topic)"/>
+    </node>
+</launch>

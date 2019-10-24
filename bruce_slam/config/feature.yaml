@@ -1,0 +1,18 @@
+CFAR:
+  Ntc: 40
+  Ngc: 20
+  Pfa: 0.01
+  rank: 10
+  alg: 'SOCA'
+
+filter:
+  threshold: 10
+  resolution: 0.5
+  radius: 1.0
+  min_points: 5
+  skip: 5
+
+visualization:
+  coordinates: 'cartesian'
+  radius: 2
+  color: [0, 165, 255]

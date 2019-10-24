@@ -1,0 +1,7 @@
+<library path="lib/libbruce_exploration_planner">
+    <class name="bruce_exploration/ExplorationPlanner" type="bruce_exploration::ExplorationPlanner" base_class_type="nav_core::BaseGlobalPlanner">
+        <description>
+            A simple planner that follows predefined waypoints.
+        </description>
+    </class>
+</library>

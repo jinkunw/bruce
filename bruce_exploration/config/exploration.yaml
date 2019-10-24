@@ -1,0 +1,69 @@
+server:
+  motion_model:
+    linear_velocity: 0.2
+    angular_velocity: 0.1
+
+  path_library:
+    xmin: -30
+    xmax: 100
+    ymin: -5
+    ymax: 55
+    resolution: 1.0
+    inflation_radius: 2.0
+
+    # of nodes / m^2
+    node_density: 2.0
+    max_clearance: 5.0
+    step_length: 3.0
+    clearing_radius: 2.0
+
+    frontier_resolution: 10.0
+    revisitation_density: 50
+    revisitation_separation: 10.0
+    revisitation_radius: 15.0
+    revisitation_max_num: 20
+
+  sonar_model:
+    range: 30.0
+    aperture: deg(130)
+    range_sigma: 0.2
+    bearing_sigma: 0.02
+
+  virtual_map:
+    xmin: -30
+    xmax: 100
+    ymin: -5
+    ymax: 55
+    # Use a lower resolution for decision-making
+    resolution: 2.0
+    # Initial uncertainty of virtual landmark
+    sigma0: 3.0
+
+  utility_function:
+    verbose: true
+    log: false
+
+    nbv:
+      degressive_coeff: 0.1
+      ig_free: 0.0
+      ig_unknown: 1.0
+      ig_occupied: 0.01
+    em:
+      distance_weight: 1.0
+    heuristic:
+      degressive_coeff: 0.1
+      ig_free: 0.0
+      ig_unknown: 1.0
+      ig_occupied: 0.01
+      alpha: 0.75
+      max_det: 1.0e-3
+
+  smooth:
+    skip_points: 0
+    points_per_unit: 10.0
+    use_end_conditions: true
+    use_middle_conditions: false
+
+client:
+  replan_time: 300.0
+  replan_distance: 50.0

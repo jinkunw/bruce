@@ -1,0 +1,8 @@
+# Localization node
+dvl_max_velocity: 0.5
+# [x y z roll pitch yaw]
+imu_pose: [0, 0, 0, deg(-90), 0, 0]  
+
+keyframe_duration: 1.0
+keyframe_translation: 4.0
+keyframe_rotation: deg(30)

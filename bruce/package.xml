@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>bruce</name>
+    <version>0.0.1</version>
+    <description>
+        The BlueROV Underwater SLAM and Exploration ROS package.
+    </description>
+    <author>Jinkun Wang</author>
+    <maintainer email="mejkunw@gmail.com">Jinkun Wang</maintainer>
+    <license>BSD 3-Clause License</license>
+
+    <url type="repository">https://github.com/RobustFieldAutonomyLab/bruce</url>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <depend>python-catkin-tools</depend>
+</package>
