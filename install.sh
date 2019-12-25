@@ -10,7 +10,7 @@ apt-get install -y socat minicom ros-${ROS_DISTRO}-move-base ros-${ROS_DISTRO}-j
 pip install mavproxy pymavlink
 # Bruce related
 pip install "numpy==1.16.5" "scipy==1.2.2" "matplotlib==2.2.4" catkin-tools "tqdm==4.30.0" "scikit-learn==0.20.4" shapely cython
-apt-get install -y ros-${ROS_DISTRO}-navfn ros-${ROS_DISTRO}-teb-local-planner ros-${ROS_DISTRO}-grid-map ros-${ROS_DISTRO}-move-base 
+apt-get install -y ros-${ROS_DISTRO}-nav-core ros-${ROS_DISTRO}-navfn ros-${ROS_DISTRO}-teb-local-planner ros-${ROS_DISTRO}-grid-map ros-${ROS_DISTRO}-move-base 
 
 echo "Create workspace in current folder..."
 mkdir -p bruce_ws/src
