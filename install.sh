@@ -3,7 +3,7 @@
 # Python dependencies
 echo "Install dependencies..."
 apt-get update
-apt-get install -y python-pip
+apt-get install -y python-pip catkin-tools
 
 # BlueROV2 related
 apt-get install -y socat minicom ros-${ROS_DISTRO}-move-base ros-${ROS_DISTRO}-joy ros-${ROS_DISTRO}-cv-bridge
